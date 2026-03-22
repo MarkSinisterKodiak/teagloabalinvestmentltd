@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+
+    /* Light warm theme (desert sky + charcoal accents) */
+    --background: 35 60% 98%; /* very light warm background */
+    --foreground: 220 15% 12%; /* dark text */
+
+    --card: 35 60% 100%;
+    --card-foreground: 220 15% 12%;
+
+    --popover: 35 60% 100%;
+    --popover-foreground: 220 15% 12%;
+
+    --primary: 34 95% 45%; /* warm sky */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 10% 12%; /* charcoal dark */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 34 95% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 30% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 22% 96%;
+    --ring: 187 67% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(120deg, hsl(34 95% 45%) 0%, rgba(10,10,10,0.18) 100%);
+    --gradient-accent: linear-gradient(120deg, hsl(34 95% 45%) 0%, hsl(28 90% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(210 30% 100%) 0%, hsl(210 30% 98%) 100%);
+    --shadow-glow: 0 0 60px -12px hsl(187 67% 40% / 0.12);
+    --shadow-card: 0 12px 30px -8px hsl(220 10% 8% / 0.06);
+
+    --sidebar-background: 210 30% 100%;
+    --sidebar-foreground: 220 15% 12%;
+    --sidebar-primary: 187 67% 40%;
+    --sidebar-primary-foreground: 210 30% 98%;
+    --sidebar-accent: 230 60% 16%;
+    --sidebar-accent-foreground: 210 30% 98%;
+    --sidebar-border: 210 20% 94%;
+    --sidebar-ring: 187 67% 40%;
+  }
+
+  .dark {
+    /* Dark mode variant */
+    --background: 210 12% 6%;
+    --foreground: 210 40% 98%;
+    --card: 210 12% 8%;
+    --card-foreground: 210 40% 98%;
+    --gradient-hero: linear-gradient(120deg, rgba(0,0,0,0.6) 0%, rgba(10,10,10,0.3) 100%);
+    --gradient-accent: linear-gradient(120deg, hsl(34 95% 40%) 0%, hsl(28 95% 45%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .glow-shadow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-truck-drive {
+    animation: truckDrive 12s linear infinite;
+  }
+
+  .animate-truck-drive-reverse {
+    animation: truckDriveReverse 15s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounceSlow 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-scale {
+    animation: pulseScale 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(38 92% 50% / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(38 92% 50% / 0.5); }
+  }
+
+  @keyframes slideRight {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(calc(100vw + 100px)); }
+  }
+
+  @keyframes slideLeft {
+    0% { transform: translateX(calc(100vw + 100px)); }
+    100% { transform: translateX(-100px); }
+  }
+
+  @keyframes truckDrive {
+    0% { transform: translateX(-150px) scaleX(1); }
+    49% { transform: translateX(calc(100vw + 150px)) scaleX(1); }
+    50% { transform: translateX(calc(100vw + 150px)) scaleX(-1); }
+    99% { transform: translateX(-150px) scaleX(-1); }
+    100% { transform: translateX(-150px) scaleX(1); }
+  }
+
+  @keyframes truckDriveReverse {
+    0% { transform: translateX(calc(100vw + 150px)); }
+    100% { transform: translateX(-150px); }
+  }
+
+  @keyframes bounceSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes pulseScale {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES & MEDIA QUERIES
+   ============================================ */
+
+/* Fluid Typography - scales smoothly across all screens */
+.text-fluid-xs {
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+}
+
+.text-fluid-sm {
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+}
+
+.text-fluid-base {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+}
+
+.text-fluid-lg {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.25rem);
+}
+
+.text-fluid-xl {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+}
+
+.text-fluid-2xl {
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+}
+
+.text-fluid-3xl {
+  font-size: clamp(1.875rem, 1.5rem + 2vw, 2.5rem);
+}
+
+.text-fluid-4xl {
+  font-size: clamp(2.25rem, 1.8rem + 2.5vw, 3.5rem);
+}
+
+.text-fluid-5xl {
+  font-size: clamp(3rem, 2rem + 3vw, 4.5rem);
+}
+
+/* Safe area padding for notched devices (iPhone X+, etc) */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.safe-left {
+  padding-left: env(safe-area-inset-left, 0);
+}
+
+.safe-right {
+  padding-right: env(safe-area-inset-right, 0);
+}
+
+.safe-x {
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+}
+
+.safe-y {
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Touch-friendly minimum sizes */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.touch-target-lg {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Responsive container with better padding */
+.container-responsive {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: max(1rem, env(safe-area-inset-left, 1rem));
+  padding-right: max(1rem, env(safe-area-inset-right, 1rem));
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Extra small screens (< 375px) - small phones */
+@media (max-width: 374px) {
+  .xs-text-xs { font-size: 0.7rem; }
+  .xs-text-sm { font-size: 0.8rem; }
+  .xs-px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+  .xs-py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+  .xs-gap-2 { gap: 0.5rem; }
+  .xs-hidden { display: none; }
+}
+
+/* Small phones (375px - 424px) */
+@media (min-width: 375px) and (max-width: 424px) {
+  .xxs-text-balance { text-wrap: balance; }
+}
+
+/* Landscape mode adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .landscape-py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+  .landscape-min-h-auto { min-height: auto; }
+  .landscape-h-auto { height: auto; }
+  .landscape-hidden { display: none; }
+}
+
+/* Large desktop / ultrawide (1920px+) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .xl-text-lg { font-size: 1.125rem; }
+  .xl-text-xl { font-size: 1.25rem; }
+}
+
+/* 4K displays (2560px+) */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-truck-drive,
+  .animate-truck-drive-reverse,
+  .animate-float,
+  .animate-shimmer,
+  .animate-pulse-glow {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .border-gray-100,
+  .border-gray-200 {
+    border-color: #333 !important;
+  }
+
+  .text-gray-400,
+  .text-gray-500,
+  .text-gray-600 {
+    color: #333 !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print,
+  nav,
+  .fixed {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Hover only on devices that support it */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+}
+
+/* Touch devices - larger tap targets */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
