@@ -53,6 +53,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-3">
             <a
               href={callLink}
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-700 hover:text-emerald-600 transition-colors"
             >
               <Phone className="w-4 h-4" />
@@ -61,7 +62,7 @@ const Navbar = () => {
             <a
               href={whatsappLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 transition-colors font-medium text-sm"
             >
               <MessageCircle className="w-4 h-4" />
@@ -107,17 +108,17 @@ const Navbar = () => {
                 <a
                   href={whatsappLink}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 py-2 text-emerald-600 font-medium"
                 >
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp Us
                 </a>
-                <a href={callLink} className="flex items-center gap-3 py-2 text-gray-700">
+                <a href={callLink} rel="noopener noreferrer" className="flex items-center gap-3 py-2 text-gray-700">
                   <Phone className="w-5 h-5" />
                   Call {company.phoneDisplay}
                 </a>
-                <a href={`mailto:${company.email}`} className="flex items-center gap-3 py-2 text-gray-700">
+                <a href={`mailto:${company.email}`} rel="noopener noreferrer" className="flex items-center gap-3 py-2 text-gray-700">
                   <Mail className="w-5 h-5" />
                   {company.email}
                 </a>
@@ -246,9 +247,9 @@ const HeroSection = () => (
             <div className="p-5 space-y-1 bg-gray-50">
               {company.whatsappNumber && (
                 <a
-                  href={`https://wa.me/${company.whatsappNumber.replace(/\+/g, "")}`}
+                  href={`https://wa.me/${company.whatsappNumber.replace(/[^0-9]/g, "")}`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group flex items-center gap-4 p-3 bg-white hover:bg-green-50 border border-gray-100 hover:border-green-200 transition-all"
                 >
                   <div className="w-10 h-10 bg-green-500 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -265,6 +266,7 @@ const HeroSection = () => (
               {company.email && (
                 <a
                   href={`mailto:${company.email}`}
+                  rel="noopener noreferrer"
                   className="group flex items-center gap-4 p-3 bg-white hover:bg-emerald-50 border border-gray-100 hover:border-emerald-200 transition-all"
                 >
                   <div className="w-10 h-10 bg-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -332,6 +334,7 @@ const HeroSection = () => (
         {company.whatsappNumber && (
           <a
             href={`tel:${company.whatsappNumber}`}
+            rel="noopener noreferrer"
             className="flex flex-col items-center gap-0.5 xs:gap-1 text-gray-700 touch-target"
           >
             <Phone className="w-5 h-5" />
@@ -342,7 +345,7 @@ const HeroSection = () => (
           <a
             href={`https://wa.me/${company.whatsappNumber.replace(/[^0-9]/g, "")}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="flex flex-col items-center gap-0.5 xs:gap-1 text-[#25D366] touch-target"
           >
             <MessageCircle className="w-5 h-5" />
@@ -481,9 +484,9 @@ const TruckCtaBanner = () => (
         </Button>
         {company.whatsappNumber && (
           <a
-            href={`https://wa.me/${company.whatsappNumber.replace(/\+/g, "")}`}
+            href={`https://wa.me/${company.whatsappNumber.replace(/[^0-9]/g, "")}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 h-14 px-8 rounded-xl border-2 border-white/30 text-white font-bold text-base hover:bg-white/10 transition-colors"
           >
             <MessageCircle className="w-5 h-5" />
@@ -1129,6 +1132,7 @@ const Footer = () => (
               <li className="pt-2">
                 <a
                   href={`tel:${company.whatsappNumber}`}
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
                 >
                   <Phone className="w-4 h-4" />
@@ -1141,7 +1145,7 @@ const Footer = () => (
                 <a
                   href={`https://wa.me/${company.whatsappNumber.replace(/[^0-9]/g, "")}`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-[#25D366] hover:text-green-300 font-medium transition-colors"
                 >
                   <MessageCircle className="w-4 h-4" />
@@ -1151,7 +1155,7 @@ const Footer = () => (
             )}
             {company.email && (
               <li>
-                <a href={`mailto:${company.email}`} className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+                <a href={`mailto:${company.email}`} rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
                   <Mail className="w-4 h-4" />
                   <span className="text-sm break-all">{company.email}</span>
                 </a>
