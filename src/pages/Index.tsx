@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Truck, Package, Clock, Shield, MapPin, MessageCircle, Menu, X, Phone, Mail, ChevronRight, CheckCircle2, Globe, ArrowRight, Briefcase, Building2, Users, Route } from "lucide-react";
+import { Truck, Package, Clock, Shield, MapPin, MessageCircle, Menu, X, Phone, Mail, ChevronRight, CheckCircle2, Globe, ArrowRight, Briefcase, Building2, Users, Route, Home, BoxIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
 import company from "@/config/company";
@@ -42,7 +42,7 @@ const Navbar = () => {
               <button
                 key={link.section}
                 onClick={() => scrollToSection(link.section)}
-                className="text-gray-600 hover:text-emerald-600 font-medium transition-colors px-3 py-1.5 rounded-full hover:bg-emerald-50"
+                className="text-gray-600 hover:text-blue-700 font-medium transition-colors px-3 py-1.5 rounded-full hover:bg-blue-50"
               >
                 {link.label}
               </button>
@@ -54,7 +54,7 @@ const Navbar = () => {
             <a
               href={callLink}
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-700 hover:text-emerald-600 transition-colors"
+              className="flex items-center gap-2 text-gray-700 hover:text-blue-700 transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="font-medium">{company.phoneDisplay}</span>
@@ -72,7 +72,7 @@ const Navbar = () => {
               variant="hero"
               size="sm"
               onClick={() => scrollToSection("quote")}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-md"
+              className="bg-blue-700 hover:bg-blue-800 text-white shadow-md"
             >
               Request Quote
             </Button>
@@ -109,7 +109,7 @@ const Navbar = () => {
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 py-2 text-emerald-600 font-medium"
+                  className="flex items-center gap-3 py-2 text-blue-700 font-medium"
                 >
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp Us
@@ -136,15 +136,15 @@ const HeroSection = () => (
     {/* Background Image */}
     <div className="absolute inset-0 z-0">
       <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-emerald-950/80 to-gray-900/90" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-900/30 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-blue-950/80 to-gray-900/90" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/30 via-transparent to-transparent" />
     </div>
 
     {/* Animated Floating Elements */}
     <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-emerald-400/5 rounded-full blur-2xl animate-pulse" />
+      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-sky-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-blue-400/5 rounded-full blur-2xl animate-pulse" />
     </div>
 
     <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 relative z-10 py-8 xs:py-10 sm:py-12 md:py-20">
@@ -152,8 +152,8 @@ const HeroSection = () => (
         {/* Hero Content */}
         <div className="lg:col-span-7 text-center lg:text-left">
           {/* Badge */}
-          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-2.5 xs:px-3 sm:px-4 py-1.5 xs:py-2 rounded-full bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 mb-4 xs:mb-6">
-            <Truck className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-emerald-400" />
+          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-2.5 xs:px-3 sm:px-4 py-1.5 xs:py-2 rounded-full bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 mb-4 xs:mb-6">
+            <Truck className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-blue-400" />
             <span className="text-[10px] xs:text-xs sm:text-sm text-amber-300 font-medium">{company.tagline} • Est. {company.established}</span>
           </div>
 
@@ -169,7 +169,7 @@ const HeroSection = () => (
           <div className="flex flex-wrap justify-center lg:justify-start gap-2 xs:gap-3 mb-4 xs:mb-6 sm:mb-8">
             <div className="flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1 xs:py-1.5 rounded-full bg-white/10 backdrop-blur-sm">
               <CheckCircle2 className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-green-400" />
-              <span className="text-[10px] xs:text-xs sm:text-sm text-white">UK Registered</span>
+              <span className="text-[10px] xs:text-xs sm:text-sm text-white">ABN Registered</span>
             </div>
             <div className="flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1 xs:py-1.5 rounded-full bg-white/10 backdrop-blur-sm">
               <Shield className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-yellow-400" />
@@ -177,7 +177,7 @@ const HeroSection = () => (
             </div>
             <div className="flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1 xs:py-1.5 rounded-full bg-white/10 backdrop-blur-sm">
               <Truck className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-blue-400" />
-              <span className="text-[10px] xs:text-xs sm:text-sm text-white">Nationwide Delivery</span>
+              <span className="text-[10px] xs:text-xs sm:text-sm text-white">Australia Wide</span>
             </div>
           </div>
 
@@ -185,7 +185,7 @@ const HeroSection = () => (
             <Button
               size="lg"
               onClick={() => scrollToSection("quote")}
-              className="group bg-emerald-600 hover:bg-emerald-700 text-white font-semibold h-11 xs:h-12 sm:h-14 px-4 xs:px-5 sm:px-6 md:px-8 text-xs xs:text-sm sm:text-base shadow-lg hover:shadow-xl transition-all touch-target w-full xs:w-auto"
+              className="group bg-blue-700 hover:bg-blue-800 text-white font-semibold h-11 xs:h-12 sm:h-14 px-4 xs:px-5 sm:px-6 md:px-8 text-xs xs:text-sm sm:text-base shadow-lg hover:shadow-xl transition-all touch-target w-full xs:w-auto"
             >
               <Briefcase className="w-4 h-4 xs:w-5 xs:h-5 mr-1.5 xs:mr-2 flex-shrink-0" />
               <span className="whitespace-nowrap">Request Quote</span>
@@ -205,21 +205,21 @@ const HeroSection = () => (
           <div className="flex justify-center lg:justify-start gap-4 xs:gap-6 sm:gap-10">
             <div className="text-center">
               <div className="flex items-center justify-center gap-1">
-                <Truck className="w-4 h-4 xs:w-5 xs:h-5 text-emerald-400" />
-                <span className="text-xl xs:text-2xl sm:text-3xl font-display font-bold text-white">UK Wide</span>
+                <Truck className="w-4 h-4 xs:w-5 xs:h-5 text-blue-400" />
+                <span className="text-xl xs:text-2xl sm:text-3xl font-display font-bold text-white">All Aus</span>
               </div>
               <div className="text-[10px] xs:text-xs sm:text-sm text-gray-400">Coverage</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-1">
-                <Shield className="w-4 h-4 xs:w-5 xs:h-5 text-emerald-400" />
+                <Shield className="w-4 h-4 xs:w-5 xs:h-5 text-blue-400" />
                 <span className="text-xl xs:text-2xl sm:text-3xl font-display font-bold text-white">Insured</span>
               </div>
-              <div className="text-[10px] xs:text-xs sm:text-sm text-gray-400">All Cargo</div>
+              <div className="text-[10px] xs:text-xs sm:text-sm text-gray-400">All Moves</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-1">
-                <Clock className="w-4 h-4 xs:w-5 xs:h-5 text-emerald-400" />
+                <Clock className="w-4 h-4 xs:w-5 xs:h-5 text-blue-400" />
                 <span className="text-xl xs:text-2xl sm:text-3xl font-display font-bold text-white">24/7</span>
               </div>
               <div className="text-[10px] xs:text-xs sm:text-sm text-gray-400">Service</div>
@@ -229,16 +229,16 @@ const HeroSection = () => (
 
         {/* Contact Card - Hidden on mobile, shown on lg+ */}
         <div className="lg:col-span-5 hidden lg:block">
-          <div className="relative bg-white border-l-4 border-emerald-600 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden">
+          <div className="relative bg-white border-l-4 border-blue-700 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden">
             <div className="absolute inset-0 animate-shimmer pointer-events-none" />
 
             <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">Get In Touch</div>
+                  <div className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-1">Get In Touch</div>
                   <div className="text-2xl font-bold text-white tracking-tight">{company.phoneDisplay || "Contact Us"}</div>
                 </div>
-                <div className="w-14 h-14 bg-emerald-600 flex items-center justify-center rotate-3 hover:rotate-0 transition-transform shadow-lg">
+                <div className="w-14 h-14 bg-blue-700 flex items-center justify-center rotate-3 hover:rotate-0 transition-transform shadow-lg">
                   <Briefcase className="w-7 h-7 text-white" />
                 </div>
               </div>
@@ -267,16 +267,16 @@ const HeroSection = () => (
                 <a
                   href={`mailto:${company.email}`}
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 p-3 bg-white hover:bg-emerald-50 border border-gray-100 hover:border-emerald-200 transition-all"
+                  className="group flex items-center gap-4 p-3 bg-white hover:bg-blue-50 border border-gray-100 hover:border-blue-200 transition-all"
                 >
-                  <div className="w-10 h-10 bg-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 bg-blue-700 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <div className="text-xs text-gray-400 uppercase tracking-wider">Email</div>
                     <div className="font-semibold text-gray-900 text-sm">{company.email}</div>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-gray-300 ml-auto group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-5 h-5 text-gray-300 ml-auto group-hover:text-blue-700 group-hover:translate-x-1 transition-all" />
                 </a>
               )}
 
@@ -294,19 +294,19 @@ const HeroSection = () => (
             {/* Quick Quote Form */}
             <div className="p-5 bg-white border-t-2 border-gray-100">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-1 bg-emerald-600" />
+                <div className="w-8 h-1 bg-blue-700" />
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Quick Enquiry</span>
               </div>
               <form className="space-y-3">
                 <input
                   placeholder="Your Name"
-                  className="w-full h-12 px-4 bg-gray-50 border-l-2 border-gray-200 focus:border-emerald-600 outline-none transition-all text-sm font-medium placeholder:text-gray-400"
+                  className="w-full h-12 px-4 bg-gray-50 border-l-2 border-gray-200 focus:border-blue-700 outline-none transition-all text-sm font-medium placeholder:text-gray-400"
                 />
                 <input
                   placeholder="Email Address"
-                  className="w-full h-12 px-4 bg-gray-50 border-l-2 border-gray-200 focus:border-emerald-600 outline-none transition-all text-sm font-medium placeholder:text-gray-400"
+                  className="w-full h-12 px-4 bg-gray-50 border-l-2 border-gray-200 focus:border-blue-700 outline-none transition-all text-sm font-medium placeholder:text-gray-400"
                 />
-                <Button className="w-full h-12 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all group">
+                <Button className="w-full h-12 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all group">
                   <Briefcase className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   Request Quote
                 </Button>
@@ -318,7 +318,7 @@ const HeroSection = () => (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex gap-2">
                   {[...Array(20)].map((_, i) => (
-                    <div key={i} className="w-8 h-0.5 bg-emerald-500/30" />
+                    <div key={i} className="w-8 h-0.5 bg-blue-500/30" />
                   ))}
                 </div>
               </div>
@@ -354,7 +354,7 @@ const HeroSection = () => (
         )}
         <button
           onClick={() => scrollToSection("quote")}
-          className="bg-emerald-600 text-white px-4 xs:px-6 py-2 xs:py-2.5 rounded-full font-semibold text-xs xs:text-sm shadow-md touch-target"
+          className="bg-blue-700 text-white px-4 xs:px-6 py-2 xs:py-2.5 rounded-full font-semibold text-xs xs:text-sm shadow-md touch-target"
         >
           Request Quote
         </button>
@@ -372,14 +372,14 @@ const SectionDivider = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         {[
-          { value: "UK Wide", label: "Coverage", icon: Truck },
-          { value: "24/7", label: "Service Available", icon: Clock },
-          { value: "Insured", label: "All Shipments", icon: Shield },
-          { value: "100%", label: "On-Time Delivery", icon: Package },
+          { value: "All Aus", label: "Coverage", icon: Truck },
+          { value: "7 Days", label: "Service Available", icon: Clock },
+          { value: "Insured", label: "Every Move", icon: Shield },
+          { value: "100%", label: "Careful Handling", icon: Package },
         ].map((stat) => (
           <div key={stat.label} className="text-center group">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-500/20 backdrop-blur-sm mb-4 group-hover:bg-emerald-500/30 transition-colors">
-              <stat.icon className="w-7 h-7 text-emerald-400" />
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500/20 backdrop-blur-sm mb-4 group-hover:bg-blue-500/30 transition-colors">
+              <stat.icon className="w-7 h-7 text-blue-400" />
             </div>
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
             <div className="text-sm text-gray-400 font-medium">{stat.label}</div>
@@ -398,23 +398,23 @@ const AboutSection = () => (
         {/* Image Side */}
         <div className="relative">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img src={truckImg} alt="Transport fleet" className="w-full h-[350px] sm:h-[450px] object-cover" />
+            <img src={truckImg} alt="Removals fleet" className="w-full h-[350px] sm:h-[450px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent" />
           </div>
           {/* Floating card */}
           <div className="absolute -bottom-6 -right-4 sm:right-8 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 hidden sm:block">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center">
-                <Shield className="w-7 h-7 text-emerald-600" />
+              <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
+                <Shield className="w-7 h-7 text-blue-700" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">UK Reg.</div>
-                <div className="text-sm text-gray-500">Company #{company.companyNumber}</div>
+                <div className="text-2xl font-bold text-gray-900">Sydney</div>
+                <div className="text-sm text-gray-500">Based Removalists</div>
               </div>
             </div>
           </div>
           {/* Second floating card */}
-          <div className="absolute -top-4 -left-4 sm:left-8 bg-emerald-600 rounded-2xl shadow-xl p-4 text-white hidden sm:block">
+          <div className="absolute -top-4 -left-4 sm:left-8 bg-blue-700 rounded-2xl shadow-xl p-4 text-white hidden sm:block">
             <div className="text-xs uppercase tracking-wider font-bold opacity-80">Established</div>
             <div className="text-3xl font-bold">{company.established}</div>
           </div>
@@ -422,29 +422,29 @@ const AboutSection = () => (
 
         {/* Content Side */}
         <div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full mb-6">
-            <Building2 className="w-4 h-4 text-emerald-600" />
-            <span className="text-emerald-700 font-semibold text-sm">Why Choose Us</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full mb-6">
+            <Building2 className="w-4 h-4 text-blue-700" />
+            <span className="text-blue-700 font-semibold text-sm">Why Choose Us</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Trusted Transport <br />
-            <span className="text-emerald-600">Partner Since {company.established}</span>
+            Your Trusted <br />
+            <span className="text-blue-700">Removalists Since {company.established}</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed">
-            {company.name} delivers reliable haulage and logistics solutions from our UK base.
-            We combine nationwide coverage with a personalised approach to move your cargo safely and on time.
+            {company.name} provides professional home and office removal services across Sydney and all of Australia.
+            We treat your belongings like our own — careful packing, safe transport, and on-time delivery every move.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {[
-              { icon: Truck, text: "Nationwide fleet coverage" },
-              { icon: Shield, text: "Fully insured shipments" },
-              { icon: Users, text: "Dedicated logistics team" },
+              { icon: Truck, text: "Australia-wide removals" },
+              { icon: Shield, text: "Fully insured moves" },
+              { icon: Users, text: "Professional removalist team" },
               { icon: Clock, text: "On-time delivery guarantee" },
             ].map((item) => (
-              <div key={item.text} className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <item.icon className="w-5 h-5 text-emerald-600" />
+              <div key={item.text} className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <item.icon className="w-5 h-5 text-blue-700" />
                 </div>
                 <span className="text-gray-700 text-sm font-medium leading-snug">{item.text}</span>
               </div>
@@ -454,7 +454,7 @@ const AboutSection = () => (
           <Button
             size="lg"
             onClick={() => scrollToSection("quote")}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold h-13 px-8 text-base shadow-lg hover:shadow-xl transition-all rounded-xl group"
+            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold h-13 px-8 text-base shadow-lg hover:shadow-xl transition-all rounded-xl group"
           >
             Get Started
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -469,15 +469,15 @@ const AboutSection = () => (
 const TruckCtaBanner = () => (
   <div className="relative py-20 sm:py-24 overflow-hidden">
     <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-    <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/90 via-emerald-800/85 to-gray-900/90" />
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/85 to-gray-900/90" />
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Need a Transport Quote?</h3>
-      <p className="text-emerald-100 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">Get a free quote from our logistics team and discover the best transport solution for your cargo.</p>
+      <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Need a Removals Quote?</h3>
+      <p className="text-blue-100 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">Get a free quote from our removals team and discover the best solution for your move.</p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button
           size="lg"
           onClick={() => scrollToSection("quote")}
-          className="bg-white text-emerald-700 hover:bg-gray-100 font-bold h-14 px-8 text-base shadow-xl rounded-xl"
+          className="bg-white text-blue-700 hover:bg-gray-100 font-bold h-14 px-8 text-base shadow-xl rounded-xl"
         >
           Request a Quote
           <ArrowRight className="w-5 h-5 ml-2" />
@@ -500,24 +500,24 @@ const TruckCtaBanner = () => (
 
 const services = [
   {
-    icon: Truck,
-    title: "Freight Haulage",
-    description: "Full and partial load haulage across the UK and Europe with our modern fleet of trucks.",
+    icon: Home,
+    title: "Home Removals",
+    description: "Full house and apartment removals across Sydney and interstate. We pack, load, transport, and unpack with care.",
+  },
+  {
+    icon: Building2,
+    title: "Office Relocations",
+    description: "Minimise downtime with our efficient office and commercial removals. Furniture, IT equipment, and files handled professionally.",
   },
   {
     icon: Package,
-    title: "Express Delivery",
-    description: "Same-day and next-day delivery services for urgent consignments and time-critical cargo.",
-  },
-  {
-    icon: Route,
-    title: "Logistics Planning",
-    description: "End-to-end supply chain and route optimisation to ensure efficient, cost-effective transport.",
+    title: "Packing Services",
+    description: "Professional packing and unpacking using quality materials. Fragile items, artwork, and electronics carefully wrapped.",
   },
   {
     icon: Shield,
-    title: "Secure Transport",
-    description: "Fully insured, GPS-tracked transport with real-time updates for high-value and fragile goods.",
+    title: "Insured Transport",
+    description: "Every move is fully insured for your peace of mind. GPS-tracked trucks with real-time updates on your belongings.",
   },
 ];
 
@@ -525,15 +525,15 @@ const ServicesSection = () => (
   <section id="services" className="py-16 sm:py-20 md:py-28 bg-gray-50 relative overflow-hidden">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div className="text-center mb-12 md:mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full mb-4">
-          <Briefcase className="w-4 h-4 text-emerald-600" />
-          <span className="text-emerald-700 font-semibold text-sm">Our Services</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full mb-4">
+          <Briefcase className="w-4 h-4 text-blue-700" />
+          <span className="text-blue-700 font-semibold text-sm">Our Services</span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-          Transport <span className="text-emerald-600">Services</span>
+          Removals <span className="text-blue-700">Services</span>
         </h2>
         <p className="text-gray-500 max-w-2xl mx-auto text-base sm:text-lg">
-          Comprehensive transport and logistics services to move your goods safely, on time, every time.
+          Professional removals and relocation services to move your home or office safely, on time, every time.
         </p>
       </div>
 
@@ -541,14 +541,14 @@ const ServicesSection = () => (
         {services.map((service) => (
           <div
             key={service.title}
-            className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl border border-gray-100 hover:border-emerald-200 transition-all duration-300 hover:-translate-y-1"
+            className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="w-14 h-14 rounded-2xl bg-emerald-50 group-hover:bg-emerald-600 flex items-center justify-center mb-6 transition-colors duration-300">
-              <service.icon className="w-7 h-7 text-emerald-600 group-hover:text-white transition-colors" />
+            <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-blue-700 flex items-center justify-center mb-6 transition-colors duration-300">
+              <service.icon className="w-7 h-7 text-blue-700 group-hover:text-white transition-colors" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors">{service.title}</h3>
+            <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-700 transition-colors">{service.title}</h3>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">{service.description}</p>
-            <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+            <div className="flex items-center gap-2 text-blue-700 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
               <span>Learn More</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
@@ -564,7 +564,7 @@ const RequestQuoteSection = () => {
     fullName: "",
     email: "",
     phone: "",
-    serviceType: "Freight Haulage",
+    serviceType: "Home Removals",
     pickupLocation: "",
     deliveryLocation: "",
     cargoDescription: "",
@@ -578,7 +578,7 @@ const RequestQuoteSection = () => {
 
   const buildWhatsAppMessage = () => {
     const lines = [
-      `*New Transport Quote Request*`,
+      `*New Removals Quote Request*`,
       `Name: ${formData.fullName}`,
       `Email: ${formData.email}`,
       `Phone: ${formData.phone}`,
@@ -609,7 +609,7 @@ const RequestQuoteSection = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: `New Transport Quote - ${formData.fullName}`,
+          _subject: `New Removals Quote - ${formData.fullName}`,
           "Name": formData.fullName,
           "Email": formData.email,
           "Phone": formData.phone,
@@ -627,7 +627,7 @@ const RequestQuoteSection = () => {
           fullName: "",
           email: "",
           phone: "",
-          serviceType: "Freight Haulage",
+          serviceType: "Home Removals",
           pickupLocation: "",
           deliveryLocation: "",
           cargoDescription: "",
@@ -642,24 +642,24 @@ const RequestQuoteSection = () => {
   };
 
   return (
-    <section id="quote" className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gradient-to-br from-gray-50 via-white to-emerald-50/30 relative overflow-hidden">
+    <section id="quote" className="py-12 xs:py-16 sm:py-20 md:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
       </div>
 
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 xs:mb-10 md:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-emerald-100 rounded-full mb-3 xs:mb-4">
-              <Briefcase className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-emerald-600" />
-              <span className="text-emerald-700 font-bold text-xs xs:text-sm uppercase tracking-widest">Request a Quote</span>
+            <div className="inline-flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-blue-100 rounded-full mb-3 xs:mb-4">
+              <Briefcase className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-blue-700" />
+              <span className="text-blue-800 font-bold text-xs xs:text-sm uppercase tracking-widest">Request a Quote</span>
             </div>
             <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 xs:mb-4 text-gray-900">
-              Get a <span className="text-emerald-600">Free Quote</span>
+              Get a <span className="text-blue-700">Free Quote</span>
             </h2>
             <p className="text-gray-600 text-sm xs:text-base sm:text-lg max-w-2xl mx-auto">
-              Tell us about your transport needs and our team will get back to you with a tailored quote.
+              Tell us about your move and our team will get back to you with a tailored quote.
             </p>
           </div>
 
@@ -667,7 +667,7 @@ const RequestQuoteSection = () => {
             <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 px-4 xs:px-6 sm:px-8 py-4 xs:py-5 sm:py-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 xs:w-12 xs:h-12 bg-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
+                  <div className="w-10 h-10 xs:w-12 xs:h-12 bg-blue-700 rounded-lg flex items-center justify-center shadow-lg">
                     <Briefcase className="w-5 h-5 xs:w-6 xs:h-6 text-white" />
                   </div>
                   <div>
@@ -677,7 +677,7 @@ const RequestQuoteSection = () => {
                 </div>
                 <div className="flex items-center gap-2 xs:gap-3">
                   <div className="flex items-center gap-1.5 px-2.5 xs:px-3 py-1 xs:py-1.5 bg-white/10 rounded-full">
-                    <Clock className="w-3 h-3 xs:w-3.5 xs:h-3.5 text-emerald-400" />
+                    <Clock className="w-3 h-3 xs:w-3.5 xs:h-3.5 text-blue-400" />
                     <span className="text-white text-[10px] xs:text-xs font-medium">24hr Response</span>
                   </div>
                   <div className="flex items-center gap-1.5 px-2.5 xs:px-3 py-1 xs:py-1.5 bg-white/10 rounded-full">
@@ -695,10 +695,10 @@ const RequestQuoteSection = () => {
                     <CheckCircle2 className="w-8 h-8 xs:w-10 xs:h-10 text-green-600" />
                   </div>
                   <h4 className="text-xl xs:text-2xl font-bold text-gray-900 mb-2">Quote Request Sent!</h4>
-                  <p className="text-gray-600 mb-6 text-sm xs:text-base max-w-md mx-auto">We'll review your enquiry and get back to you within 24 hours.</p>
+              <p className="text-gray-600 mb-6 text-sm xs:text-base max-w-md mx-auto">We'll review your enquiry and get back to you within 24 hours.</p>
                   <Button
                     onClick={() => setStatus("idle")}
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white touch-target h-11 px-6"
+                    className="bg-blue-700 hover:bg-blue-800 text-white touch-target h-11 px-6"
                   >
                     Submit Another Enquiry
                   </Button>
@@ -707,8 +707,8 @@ const RequestQuoteSection = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                        <span className="text-emerald-600 font-bold text-xs">1</span>
+                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                        <span className="text-blue-700 font-bold text-xs">1</span>
                       </div>
                       <h4 className="font-semibold text-gray-900 text-sm xs:text-base">Contact Information</h4>
                     </div>
@@ -722,7 +722,7 @@ const RequestQuoteSection = () => {
                           onChange={handleChange}
                           placeholder="John Doe"
                           required
-                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm sm:text-base"
+                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -734,7 +734,7 @@ const RequestQuoteSection = () => {
                           onChange={handleChange}
                           placeholder="john@example.com"
                           required
-                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm sm:text-base"
+                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -744,9 +744,9 @@ const RequestQuoteSection = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+44 7XXX XXXXXX"
+                          placeholder="+61 4XX XXX XXX"
                           required
-                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm sm:text-base"
+                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base"
                         />
                       </div>
                     </div>
@@ -754,10 +754,10 @@ const RequestQuoteSection = () => {
 
                   <div>
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                        <span className="text-emerald-600 font-bold text-xs">2</span>
+                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                        <span className="text-blue-700 font-bold text-xs">2</span>
                       </div>
-                      <h4 className="font-semibold text-gray-900 text-sm xs:text-base">Transport Details</h4>
+                      <h4 className="font-semibold text-gray-900 text-sm xs:text-base">Removals Details</h4>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 xs:gap-4">
                       <div className="space-y-1.5">
@@ -767,24 +767,24 @@ const RequestQuoteSection = () => {
                           value={formData.serviceType}
                           onChange={handleChange}
                           required
-                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm sm:text-base appearance-none cursor-pointer"
+                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base appearance-none cursor-pointer"
                         >
-                          <option>Freight Haulage</option>
-                          <option>Express Delivery</option>
-                          <option>Logistics Planning</option>
-                          <option>Secure Transport</option>
+                          <option>Home Removals</option>
+                          <option>Office Relocation</option>
+                          <option>Packing Services</option>
+                          <option>Interstate Move</option>
                           <option>General Enquiry</option>
                         </select>
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-xs xs:text-sm font-medium text-gray-700">Cargo Description</label>
+                        <label className="text-xs xs:text-sm font-medium text-gray-700">Items Description</label>
                         <input
                           type="text"
                           name="cargoDescription"
                           value={formData.cargoDescription}
                           onChange={handleChange}
-                          placeholder="e.g. Pallets, Machinery, Furniture"
-                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm sm:text-base"
+                          placeholder="e.g. 3-bedroom house, Office furniture"
+                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base"
                         />
                       </div>
                     </div>
@@ -796,8 +796,8 @@ const RequestQuoteSection = () => {
                           name="pickupLocation"
                           value={formData.pickupLocation}
                           onChange={handleChange}
-                          placeholder="e.g. London, Manchester"
-                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm sm:text-base"
+                          placeholder="e.g. Sydney CBD, Parramatta"
+                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -807,8 +807,8 @@ const RequestQuoteSection = () => {
                           name="deliveryLocation"
                           value={formData.deliveryLocation}
                           onChange={handleChange}
-                          placeholder="e.g. Birmingham, Leeds"
-                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm sm:text-base"
+                          placeholder="e.g. Melbourne, Brisbane"
+                          className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base"
                         />
                       </div>
                     </div>
@@ -816,8 +816,8 @@ const RequestQuoteSection = () => {
 
                   <div>
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                        <span className="text-emerald-600 font-bold text-xs">3</span>
+                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                        <span className="text-blue-700 font-bold text-xs">3</span>
                       </div>
                       <h4 className="font-semibold text-gray-900 text-sm xs:text-base">Additional Details</h4>
                     </div>
@@ -825,9 +825,9 @@ const RequestQuoteSection = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us more about your transport requirements (dimensions, weight, special handling, etc.)..."
+                      placeholder="Tell us more about your move (number of rooms, heavy items, access requirements, preferred date, etc.)..."
                       rows={3}
-                      className="w-full px-3 xs:px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all resize-none text-sm sm:text-base"
+                      className="w-full px-3 xs:px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all resize-none text-sm sm:text-base"
                     />
                   </div>
 
@@ -844,7 +844,7 @@ const RequestQuoteSection = () => {
                     <Button
                       type="submit"
                       disabled={status === "loading"}
-                      className="w-full h-12 xs:h-14 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold text-sm xs:text-base shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all touch-target disabled:opacity-70 rounded-xl"
+                      className="w-full h-12 xs:h-14 bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-800 hover:to-sky-700 text-white font-semibold text-sm xs:text-base shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 transition-all touch-target disabled:opacity-70 rounded-xl"
                     >
                       {status === "loading" ? (
                         <span className="flex items-center justify-center gap-2">
@@ -876,7 +876,7 @@ const RequestQuoteSection = () => {
               <span className="text-xs xs:text-sm font-medium">Confidential</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
-              <Clock className="w-4 h-4 xs:w-5 xs:h-5 text-emerald-600" />
+              <Clock className="w-4 h-4 xs:w-5 xs:h-5 text-blue-700" />
               <span className="text-xs xs:text-sm font-medium">24hr Response</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
@@ -943,13 +943,13 @@ const CareersSection = () => {
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start lg:items-center">
           <div className="text-center lg:text-left order-2 lg:order-1">
-            <span className="inline-block text-emerald-500 font-semibold text-[10px] xs:text-xs sm:text-sm uppercase tracking-wider mb-2 xs:mb-3">Join Our Team</span>
+            <span className="inline-block text-blue-600 font-semibold text-[10px] xs:text-xs sm:text-sm uppercase tracking-wider mb-2 xs:mb-3">Join Our Team</span>
             <h2 className="font-display text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 xs:mb-4 sm:mb-6 leading-tight">
-              Work at <span className="text-emerald-500 block xs:inline">{company.displayName}</span>
+              Work at <span className="text-blue-600 block xs:inline">{company.displayName}</span>
             </h2>
             <p className="text-gray-300 mb-4 xs:mb-6 sm:mb-8 text-xs xs:text-sm sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
-              Join a growing team in the transport and logistics industry. We're looking for dedicated professionals
-              who share our commitment to reliable, safe delivery.
+              Join a growing removals team in Sydney. We're looking for dedicated professionals
+              who take pride in helping people move safely and stress-free.
             </p>
 
             <ul className="space-y-1.5 xs:space-y-2 sm:space-y-3 mb-4 xs:mb-6 sm:mb-8 inline-block text-left w-full max-w-sm mx-auto lg:mx-0">
@@ -961,8 +961,8 @@ const CareersSection = () => {
                 "Modern fleet & equipment",
               ].map((benefit) => (
                 <li key={benefit} className="flex items-center gap-2 xs:gap-2.5 sm:gap-3">
-                  <div className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                    <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500" />
+                  <div className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-600" />
                   </div>
                   <span className="text-gray-200 text-[11px] xs:text-xs sm:text-sm md:text-base leading-tight">{benefit}</span>
                 </li>
@@ -972,7 +972,7 @@ const CareersSection = () => {
             <div className="hidden lg:block">
               <Button
                 size="lg"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base shadow-lg touch-target"
+                className="bg-blue-700 hover:bg-blue-800 text-white font-semibold h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base shadow-lg touch-target"
                 onClick={() => document.getElementById("career-form")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Apply Now
@@ -993,7 +993,7 @@ const CareersSection = () => {
                   <p className="text-gray-600 mb-3 xs:mb-4 text-xs xs:text-sm sm:text-base">We'll review your application and contact you soon.</p>
                   <Button
                     onClick={() => setStatus("idle")}
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white touch-target h-10 xs:h-11 sm:h-12 text-xs xs:text-sm sm:text-base px-4 xs:px-6"
+                    className="bg-blue-700 hover:bg-blue-800 text-white touch-target h-10 xs:h-11 sm:h-12 text-xs xs:text-sm sm:text-base px-4 xs:px-6"
                   >
                     Submit Another
                   </Button>
@@ -1007,7 +1007,7 @@ const CareersSection = () => {
                     onChange={handleChange}
                     placeholder="Full Name"
                     required
-                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
+                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
                   />
                   <input
                     type="email"
@@ -1016,7 +1016,7 @@ const CareersSection = () => {
                     onChange={handleChange}
                     placeholder="Email Address"
                     required
-                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
+                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
                   />
                   <input
                     type="tel"
@@ -1025,14 +1025,14 @@ const CareersSection = () => {
                     onChange={handleChange}
                     placeholder="Phone Number"
                     required
-                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
+                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
                   />
                   <select
                     name="experience"
                     value={formData.experience}
                     onChange={handleChange}
                     required
-                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
+                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
                   >
                     <option value="">Years of Experience</option>
                     <option value="0-1 years">0-1 years</option>
@@ -1046,12 +1046,12 @@ const CareersSection = () => {
                     value={formData.role}
                     onChange={handleChange}
                     required
-                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
+                    className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
                   >
                     <option value="">Role Interest</option>
-                    <option value="HGV Driver">HGV Driver</option>
-                    <option value="Van Driver">Van Driver</option>
-                    <option value="Logistics Coordinator">Logistics Coordinator</option>
+                    <option value="Removalist">Removalist / Mover</option>
+                    <option value="Truck Driver">Truck Driver</option>
+                    <option value="Packing Specialist">Packing Specialist</option>
                     <option value="Warehouse Operative">Warehouse Operative</option>
                     <option value="Operations Manager">Operations Manager</option>
                   </select>
@@ -1065,7 +1065,7 @@ const CareersSection = () => {
                   <Button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full h-10 xs:h-11 sm:h-12 md:h-14 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs xs:text-sm sm:text-base shadow-md disabled:opacity-70 touch-target"
+                    className="w-full h-10 xs:h-11 sm:h-12 md:h-14 bg-blue-700 hover:bg-blue-800 text-white font-semibold text-xs xs:text-sm sm:text-base shadow-md disabled:opacity-70 touch-target"
                   >
                     {status === "loading" ? (
                       <span className="flex items-center justify-center gap-1.5 xs:gap-2">
@@ -1098,27 +1098,27 @@ const Footer = () => (
             <Logo size="md" />
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
-            Your trusted partner in transport, haulage, and logistics solutions, headquartered in the United Kingdom.
+            Your trusted removalists in Sydney. Professional home and office removals across Australia.
           </p>
         </div>
 
         <div>
           <h4 className="font-semibold mb-4 text-white text-sm">Services</h4>
           <ul className="space-y-2.5 text-sm text-gray-400">
-            <li><button onClick={() => scrollToSection("services")} className="hover:text-emerald-400 transition-colors">Freight Haulage</button></li>
-            <li><button onClick={() => scrollToSection("services")} className="hover:text-emerald-400 transition-colors">Express Delivery</button></li>
-            <li><button onClick={() => scrollToSection("services")} className="hover:text-emerald-400 transition-colors">Logistics Planning</button></li>
-            <li><button onClick={() => scrollToSection("services")} className="hover:text-emerald-400 transition-colors">Secure Transport</button></li>
+            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Home Removals</button></li>
+            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Office Relocations</button></li>
+            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Packing Services</button></li>
+            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Insured Transport</button></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold mb-4 text-white text-sm">Company</h4>
           <ul className="space-y-2.5 text-sm text-gray-400">
-            <li><button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-emerald-400 transition-colors">About Us</button></li>
-            <li><button onClick={() => scrollToSection("careers")} className="hover:text-emerald-400 transition-colors">Careers</button></li>
-            <li><button onClick={() => scrollToSection("quote")} className="hover:text-emerald-400 transition-colors">Request Quote</button></li>
-            <li><button onClick={() => scrollToSection("contact")} className="hover:text-emerald-400 transition-colors">Contact</button></li>
+            <li><button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-blue-400 transition-colors">About Us</button></li>
+            <li><button onClick={() => scrollToSection("careers")} className="hover:text-blue-400 transition-colors">Careers</button></li>
+            <li><button onClick={() => scrollToSection("quote")} className="hover:text-blue-400 transition-colors">Request Quote</button></li>
+            <li><button onClick={() => scrollToSection("contact")} className="hover:text-blue-400 transition-colors">Contact</button></li>
           </ul>
         </div>
 
@@ -1133,7 +1133,7 @@ const Footer = () => (
                 <a
                   href={`tel:${company.whatsappNumber}`}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
+                  className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   <span className="text-sm">{company.phoneDisplay}</span>
@@ -1155,7 +1155,7 @@ const Footer = () => (
             )}
             {company.email && (
               <li>
-                <a href={`mailto:${company.email}`} rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+                <a href={`mailto:${company.email}`} rel="noopener noreferrer" className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors">
                   <Mail className="w-4 h-4" />
                   <span className="text-sm break-all">{company.email}</span>
                 </a>
@@ -1166,7 +1166,7 @@ const Footer = () => (
       </div>
 
       <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} {company.displayName}. Company No. {company.companyNumber}. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} {company.displayName}. All rights reserved.</p>
       </div>
     </div>
   </footer>

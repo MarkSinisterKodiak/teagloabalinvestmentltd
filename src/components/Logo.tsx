@@ -21,47 +21,41 @@ const Logo = ({ className = "", showText = true, size = "md" }: LogoProps) => {
       >
         <defs>
           <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#059669" />
-            <stop offset="100%" stopColor="#047857" />
-          </linearGradient>
-          <linearGradient id="chartGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#ffffff" />
+            <stop offset="0%" stopColor="#1e40af" />
+            <stop offset="100%" stopColor="#1e3a8a" />
           </linearGradient>
         </defs>
 
-        {/* Shield background */}
-        <path d="M32 2 L58 16 L58 48 L32 62 L6 48 L6 16 Z" fill="url(#bgGradient)" />
-        <path d="M32 6 L54 18 L54 46 L32 58 L10 46 L10 18 Z" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        {/* Rounded square background */}
+        <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGradient)" />
+        <rect x="5" y="5" width="54" height="54" rx="11" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
 
-        {/* Truck body */}
-        <rect x="14" y="28" width="24" height="14" rx="2" fill="rgba(255,255,255,0.9)" />
-        {/* Truck cab */}
-        <path d="M38 32 L46 32 L50 38 L50 42 L38 42 Z" fill="#ffffff" />
-        {/* Truck windshield */}
-        <path d="M40 33 L45 33 L48 38 L40 38 Z" fill="rgba(250,204,21,0.6)" />
-        {/* Wheels */}
-        <circle cx="22" cy="44" r="4" fill="#ffffff" />
-        <circle cx="22" cy="44" r="2" fill="url(#bgGradient)" />
-        <circle cx="44" cy="44" r="4" fill="#ffffff" />
-        <circle cx="44" cy="44" r="2" fill="url(#bgGradient)" />
-        {/* Road line */}
-        <rect x="10" y="49" width="8" height="1.5" rx="0.75" fill="rgba(255,255,255,0.4)" />
-        <rect x="22" y="49" width="12" height="1.5" rx="0.75" fill="rgba(255,255,255,0.4)" />
-        <rect x="38" y="49" width="8" height="1.5" rx="0.75" fill="rgba(255,255,255,0.4)" />
-
-        {/* Globe hint behind truck */}
-        <circle cx="32" cy="22" r="8" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-        <path d="M26 22 L38 22" stroke="rgba(255,255,255,0.2)" strokeWidth="0.8" />
+        {/* House roof */}
+        <path d="M18 30 L32 18 L46 30" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        {/* House body */}
+        <rect x="22" y="30" width="20" height="14" rx="1" fill="rgba(255,255,255,0.85)" />
+        {/* House door */}
+        <rect x="29" y="35" width="6" height="9" rx="1" fill="#1e40af" />
+        {/* Moving truck */}
+        <rect x="10" y="40" width="16" height="9" rx="1.5" fill="#fbbf24" />
+        <path d="M26 43 L32 43 L34 47 L34 49 L26 49 Z" fill="#fbbf24" />
+        {/* Truck wheels */}
+        <circle cx="15" cy="50" r="3" fill="white" />
+        <circle cx="15" cy="50" r="1.5" fill="#1e40af" />
+        <circle cx="30" cy="50" r="3" fill="white" />
+        <circle cx="30" cy="50" r="1.5" fill="#1e40af" />
+        {/* Boxes on truck */}
+        <rect x="12" y="36" width="5" height="4" rx="0.5" fill="rgba(255,255,255,0.7)" />
+        <rect x="18" y="37" width="4" height="3" rx="0.5" fill="rgba(255,255,255,0.5)" />
       </svg>
 
       {showText && (
         <div className="flex flex-col">
           <span className={`font-display ${sizes[size].text} font-bold text-gray-900 leading-tight`}>
-            TEA Global
+            Hanley's
           </span>
-          <span className="text-xs font-medium text-emerald-600 tracking-wider uppercase">
-            Transport
+          <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">
+            Removals
           </span>
         </div>
       )}
