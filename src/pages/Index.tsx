@@ -24,6 +24,9 @@ const Navbar = () => {
     { label: "Contact", section: "contact" },
   ];
 
+  const whatsappLink = `https://wa.me/${company.whatsappNumber.replace(/[^0-9]/g, "")}`;
+  const callLink = `tel:${company.whatsappNumber}`;
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-[0_1px_3px_rgba(0,0,0,0.05)] safe-top">
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
@@ -47,13 +50,22 @@ const Navbar = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <a
-              href={`tel:${company.whatsappNumber}`}
+              href={callLink}
               className="flex items-center gap-2 text-gray-700 hover:text-emerald-600 transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="font-medium">{company.phoneDisplay}</span>
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 transition-colors font-medium text-sm"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp
             </a>
             <Button
               variant="hero"
@@ -93,7 +105,7 @@ const Navbar = () => {
               ))}
               <div className="mt-4 pt-4 border-t border-gray-200 px-4">
                 <a
-                  href={`https://wa.me/${company.whatsappNumber.replace(/\+/g, "")}`}
+                  href={whatsappLink}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-3 py-2 text-emerald-600 font-medium"
@@ -101,9 +113,13 @@ const Navbar = () => {
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp Us
                 </a>
-                <a href={`tel:${company.whatsappNumber}`} className="flex items-center gap-3 py-2 text-gray-700">
+                <a href={callLink} className="flex items-center gap-3 py-2 text-gray-700">
                   <Phone className="w-5 h-5" />
-                  {company.phoneDisplay}
+                  Call {company.phoneDisplay}
+                </a>
+                <a href={`mailto:${company.email}`} className="flex items-center gap-3 py-2 text-gray-700">
+                  <Mail className="w-5 h-5" />
+                  {company.email}
                 </a>
               </div>
             </div>
@@ -319,16 +335,18 @@ const HeroSection = () => (
             className="flex flex-col items-center gap-0.5 xs:gap-1 text-gray-700 touch-target"
           >
             <Phone className="w-5 h-5" />
-            <span className="text-[10px] xs:text-xs">Call</span>
+            <span className="text-[10px] xs:text-xs">Call Us</span>
           </a>
         )}
-        {company.email && (
+        {company.whatsappNumber && (
           <a
-            href={`mailto:${company.email}`}
-            className="flex flex-col items-center gap-0.5 xs:gap-1 text-emerald-600 touch-target"
+            href={`https://wa.me/${company.whatsappNumber.replace(/[^0-9]/g, "")}`}
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-col items-center gap-0.5 xs:gap-1 text-[#25D366] touch-target"
           >
-            <Mail className="w-5 h-5" />
-            <span className="text-[10px] xs:text-xs">Email</span>
+            <MessageCircle className="w-5 h-5" />
+            <span className="text-[10px] xs:text-xs">WhatsApp</span>
           </a>
         )}
         <button
@@ -1115,6 +1133,19 @@ const Footer = () => (
                 >
                   <Phone className="w-4 h-4" />
                   <span className="text-sm">{company.phoneDisplay}</span>
+                </a>
+              </li>
+            )}
+            {company.whatsappNumber && (
+              <li>
+                <a
+                  href={`https://wa.me/${company.whatsappNumber.replace(/[^0-9]/g, "")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-[#25D366] hover:text-green-300 font-medium transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span className="text-sm">WhatsApp Us</span>
                 </a>
               </li>
             )}
