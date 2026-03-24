@@ -4,7 +4,7 @@ const company = {
   companyNumber: "",
   established: 2024,
   tagline: "Your Trusted Removalists",
-  phoneDisplay: "+61 468 206 874",
+  phoneDisplay: "0468 206 874",
   whatsappNumber: "+61468206874",
   email: "hanleysremovalpty@gmail.com",
   formSubmitHash: import.meta.env.VITE_FORMSUBMIT_HASH || "",
