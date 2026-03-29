@@ -3,9 +3,9 @@ import { Truck, Package, Clock, Shield, MapPin, MessageCircle, Menu, X, Phone, M
 import { Button } from "@/components/ui/button";
 import LogoIdris from "@/components/LogoIdris";
 import company from "@/config/company.idris";
-import heroBg from "@/assets/hero-bg.jpg";
-import truckRoad from "@/assets/blank-cargo-truck-road.jpg";
-import truckImg from "@/assets/truck.jpg";
+import ukTruckHero from "@/assets/uk-truck-hero.jpg";
+import ukTruckRoad from "@/assets/uk-truck-road.jpg";
+import ukTruckFleet from "@/assets/uk-truck-fleet.jpg";
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -135,7 +135,7 @@ const HeroSection = () => (
   <section className="relative min-h-[100svh] flex items-center pt-14 xs:pt-16 md:pt-20 overflow-hidden landscape-min-h-auto">
     {/* Background Image */}
     <div className="absolute inset-0 z-0">
-      <img src={truckImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={ukTruckHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-blue-950/80 to-gray-900/90" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/30 via-transparent to-transparent" />
     </div>
@@ -359,7 +359,7 @@ const HeroSection = () => (
 // Stats Banner with truck background
 const SectionDivider = () => (
   <div className="relative py-16 sm:py-20 overflow-hidden">
-    <img src={truckRoad} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <img src={ukTruckRoad} alt="" className="absolute inset-0 w-full h-full object-cover" />
     <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/80 to-gray-900/90" />
 
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -391,7 +391,7 @@ const AboutSection = () => (
         {/* Image Side */}
         <div className="relative">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img src={truckImg} alt="Transport fleet" className="w-full h-[350px] sm:h-[450px] object-cover" />
+            <img src={ukTruckFleet} alt="Transport fleet" className="w-full h-[350px] sm:h-[450px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent" />
           </div>
           {/* Floating card */}
@@ -461,7 +461,7 @@ const AboutSection = () => (
 // Truck CTA Banner
 const TruckCtaBanner = () => (
   <div className="relative py-20 sm:py-24 overflow-hidden">
-    <img src={truckRoad} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <img src={ukTruckRoad} alt="" className="absolute inset-0 w-full h-full object-cover" />
     <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/85 to-gray-900/90" />
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Need a Transport Quote?</h3>
@@ -931,7 +931,7 @@ const CareersSection = () => {
 
   return (
     <section id="careers" className="py-10 xs:py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-900 text-white overflow-hidden relative">
-      <img src={truckImg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-15" />
+      <img src={ukTruckHero} alt="" className="absolute inset-0 w-full h-full object-cover opacity-15" />
       <div className="absolute inset-0 bg-gray-900/80" />
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start lg:items-center">
