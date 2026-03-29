@@ -1,17 +1,18 @@
 const company = {
-  name: "Hanley's Removals Pty",
-  displayName: "Hanley's Removals",
-  companyNumber: "",
-  established: 2024,
-  tagline: "Your Trusted Removalists",
+  name: "CREMONA HAULAGE PTY LTD",
+  displayName: "Cremona Haulage",
+  companyNumber: "ACN 160 422 417",
+  abn: "39 160 422 417",
+  established: 2012,
+  tagline: "Reliable Haulage & Transport",
   phoneDisplay: "0468 206 874",
   whatsappNumber: "+61468206874",
-  email: "hanleysremovalpty@gmail.com",
+  email: "haulagecremona@gmail.com",
   formSubmitHash: import.meta.env.VITE_FORMSUBMIT_HASH || "",
-  address: ["13A Bessemer St", "Sydney, NSW 2148"],
+  address: ["NSW 2765", "Australia"],
   hero: {
-    headline: "Sydney's Trusted Removalists",
-    subtext: "Professional home and office removals across Sydney and all of Australia. Careful handling, on-time delivery, stress-free moves.",
+    headline: "NSW's Trusted Haulage Experts",
+    subtext: "Professional haulage and freight transport across NSW and all of Australia. Safe handling, on-time delivery, every load.",
   },
 };
 

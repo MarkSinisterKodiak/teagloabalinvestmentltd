@@ -135,7 +135,7 @@ const HeroSection = () => (
   <section className="relative min-h-[100svh] flex items-center pt-14 xs:pt-16 md:pt-20 overflow-hidden landscape-min-h-auto">
     {/* Background Image */}
     <div className="absolute inset-0 z-0">
-      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={truckImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-blue-950/80 to-gray-900/90" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/30 via-transparent to-transparent" />
     </div>
@@ -154,7 +154,7 @@ const HeroSection = () => (
           {/* Badge */}
           <div className="inline-flex items-center gap-1.5 xs:gap-2 px-2.5 xs:px-3 sm:px-4 py-1.5 xs:py-2 rounded-full bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 mb-4 xs:mb-6">
             <Truck className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-blue-400" />
-            <span className="text-[10px] xs:text-xs sm:text-sm text-amber-300 font-medium">{company.tagline} • Est. {company.established}</span>
+            <span className="text-[10px] xs:text-xs sm:text-sm text-amber-300 font-medium">{company.tagline} • ABN {(company as any).abn || ''} • Est. {company.established}</span>
           </div>
 
           <h1 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 xs:mb-4 sm:mb-6 leading-tight text-white">
@@ -173,7 +173,7 @@ const HeroSection = () => (
             </div>
             <div className="flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1 xs:py-1.5 rounded-full bg-white/10 backdrop-blur-sm">
               <Shield className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-yellow-400" />
-              <span className="text-[10px] xs:text-xs sm:text-sm text-white">Fully Insured</span>
+              <span className="text-[10px] xs:text-xs sm:text-sm text-white">GST Registered</span>
             </div>
             <div className="flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1 xs:py-1.5 rounded-full bg-white/10 backdrop-blur-sm">
               <Truck className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-blue-400" />
@@ -215,7 +215,7 @@ const HeroSection = () => (
                 <Shield className="w-4 h-4 xs:w-5 xs:h-5 text-blue-400" />
                 <span className="text-xl xs:text-2xl sm:text-3xl font-display font-bold text-white">Insured</span>
               </div>
-              <div className="text-[10px] xs:text-xs sm:text-sm text-gray-400">All Moves</div>
+              <div className="text-[10px] xs:text-xs sm:text-sm text-gray-400">All Loads</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-1">
@@ -291,26 +291,19 @@ const HeroSection = () => (
               </div>
             </div>
 
-            {/* Quick Quote Form */}
+            {/* Quick Quote CTA */}
             <div className="p-5 bg-white border-t-2 border-gray-100">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-1 bg-blue-700" />
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Quick Enquiry</span>
               </div>
-              <form className="space-y-3">
-                <input
-                  placeholder="Your Name"
-                  className="w-full h-12 px-4 bg-gray-50 border-l-2 border-gray-200 focus:border-blue-700 outline-none transition-all text-sm font-medium placeholder:text-gray-400"
-                />
-                <input
-                  placeholder="Email Address"
-                  className="w-full h-12 px-4 bg-gray-50 border-l-2 border-gray-200 focus:border-blue-700 outline-none transition-all text-sm font-medium placeholder:text-gray-400"
-                />
-                <Button className="w-full h-12 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all group">
-                  <Briefcase className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  Request Quote
-                </Button>
-              </form>
+              <Button
+                onClick={() => scrollToSection("quote")}
+                className="w-full h-12 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all group"
+              >
+                <Briefcase className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                Request Quote
+              </Button>
             </div>
 
             {/* Bottom bar */}
@@ -374,8 +367,8 @@ const SectionDivider = () => (
         {[
           { value: "All Aus", label: "Coverage", icon: Truck },
           { value: "7 Days", label: "Service Available", icon: Clock },
-          { value: "Insured", label: "Every Move", icon: Shield },
-          { value: "100%", label: "Careful Handling", icon: Package },
+          { value: "Insured", label: "Every Load", icon: Shield },
+          { value: "100%", label: "Safe Delivery", icon: Package },
         ].map((stat) => (
           <div key={stat.label} className="text-center group">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500/20 backdrop-blur-sm mb-4 group-hover:bg-blue-500/30 transition-colors">
@@ -398,7 +391,7 @@ const AboutSection = () => (
         {/* Image Side */}
         <div className="relative">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img src={truckImg} alt="Removals fleet" className="w-full h-[350px] sm:h-[450px] object-cover" />
+            <img src={truckImg} alt="Haulage fleet" className="w-full h-[350px] sm:h-[450px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent" />
           </div>
           {/* Floating card */}
@@ -408,8 +401,8 @@ const AboutSection = () => (
                 <Shield className="w-7 h-7 text-blue-700" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">Sydney</div>
-                <div className="text-sm text-gray-500">Based Removalists</div>
+                <div className="text-2xl font-bold text-gray-900">NSW</div>
+                <div className="text-sm text-gray-500">Based Haulage</div>
               </div>
             </div>
           </div>
@@ -428,18 +421,18 @@ const AboutSection = () => (
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Your Trusted <br />
-            <span className="text-blue-700">Removalists Since {company.established}</span>
+            <span className="text-blue-700">Haulage Partner Since {company.established}</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed">
-            {company.name} provides professional home and office removal services across Sydney and all of Australia.
-            We treat your belongings like our own — careful packing, safe transport, and on-time delivery every move.
+            {company.name} provides professional haulage and freight transport services across NSW and all of Australia.
+            We handle your cargo with care — secure loading, safe transport, and on-time delivery every load.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {[
-              { icon: Truck, text: "Australia-wide removals" },
-              { icon: Shield, text: "Fully insured moves" },
-              { icon: Users, text: "Professional removalist team" },
+              { icon: Truck, text: "Australia-wide haulage" },
+              { icon: Shield, text: "Fully insured transport" },
+              { icon: Users, text: "Professional driver team" },
               { icon: Clock, text: "On-time delivery guarantee" },
             ].map((item) => (
               <div key={item.text} className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors">
@@ -468,11 +461,11 @@ const AboutSection = () => (
 // Truck CTA Banner
 const TruckCtaBanner = () => (
   <div className="relative py-20 sm:py-24 overflow-hidden">
-    <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <img src={truckRoad} alt="" className="absolute inset-0 w-full h-full object-cover" />
     <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/85 to-gray-900/90" />
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Need a Removals Quote?</h3>
-      <p className="text-blue-100 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">Get a free quote from our removals team and discover the best solution for your move.</p>
+      <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Need a Haulage Quote?</h3>
+      <p className="text-blue-100 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">Get a free quote from our haulage team and discover the best transport solution for your freight.</p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button
           size="lg"
@@ -500,24 +493,24 @@ const TruckCtaBanner = () => (
 
 const services = [
   {
-    icon: Home,
-    title: "Home Removals",
-    description: "Full house and apartment removals across Sydney and interstate. We pack, load, transport, and unpack with care.",
+    icon: Truck,
+    title: "General Haulage",
+    description: "Reliable freight and cargo haulage across NSW and interstate. From pallets to full truckloads, we deliver on time.",
   },
   {
     icon: Building2,
-    title: "Office Relocations",
-    description: "Minimise downtime with our efficient office and commercial removals. Furniture, IT equipment, and files handled professionally.",
+    title: "Commercial Transport",
+    description: "Efficient commercial and industrial transport solutions. Equipment, materials, and supplies moved professionally.",
   },
   {
     icon: Package,
-    title: "Packing Services",
-    description: "Professional packing and unpacking using quality materials. Fragile items, artwork, and electronics carefully wrapped.",
+    title: "Freight Services",
+    description: "Secure freight handling and delivery using quality equipment. Heavy loads, oversized items, and bulk cargo transported safely.",
   },
   {
     icon: Shield,
     title: "Insured Transport",
-    description: "Every move is fully insured for your peace of mind. GPS-tracked trucks with real-time updates on your belongings.",
+    description: "Every load is fully insured for your peace of mind. GPS-tracked trucks with real-time updates on your cargo.",
   },
 ];
 
@@ -530,10 +523,10 @@ const ServicesSection = () => (
           <span className="text-blue-700 font-semibold text-sm">Our Services</span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-          Removals <span className="text-blue-700">Services</span>
+          Haulage <span className="text-blue-700">Services</span>
         </h2>
         <p className="text-gray-500 max-w-2xl mx-auto text-base sm:text-lg">
-          Professional removals and relocation services to move your home or office safely, on time, every time.
+          Professional haulage and freight transport services to move your cargo safely, on time, every time.
         </p>
       </div>
 
@@ -564,7 +557,7 @@ const RequestQuoteSection = () => {
     fullName: "",
     email: "",
     phone: "",
-    serviceType: "Home Removals",
+    serviceType: "General Haulage",
     pickupLocation: "",
     deliveryLocation: "",
     cargoDescription: "",
@@ -578,7 +571,7 @@ const RequestQuoteSection = () => {
 
   const buildWhatsAppMessage = () => {
     const lines = [
-      `*New Removals Quote Request*`,
+      `*New Haulage Quote Request*`,
       `Name: ${formData.fullName}`,
       `Email: ${formData.email}`,
       `Phone: ${formData.phone}`,
@@ -609,7 +602,7 @@ const RequestQuoteSection = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: `New Removals Quote - ${formData.fullName}`,
+          _subject: `New Haulage Quote - ${formData.fullName}`,
           "Name": formData.fullName,
           "Email": formData.email,
           "Phone": formData.phone,
@@ -627,7 +620,7 @@ const RequestQuoteSection = () => {
           fullName: "",
           email: "",
           phone: "",
-          serviceType: "Home Removals",
+          serviceType: "General Haulage",
           pickupLocation: "",
           deliveryLocation: "",
           cargoDescription: "",
@@ -659,7 +652,7 @@ const RequestQuoteSection = () => {
               Get a <span className="text-blue-700">Free Quote</span>
             </h2>
             <p className="text-gray-600 text-sm xs:text-base sm:text-lg max-w-2xl mx-auto">
-              Tell us about your move and our team will get back to you with a tailored quote.
+              Tell us about your freight and our team will get back to you with a tailored quote.
             </p>
           </div>
 
@@ -757,7 +750,7 @@ const RequestQuoteSection = () => {
                       <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
                         <span className="text-blue-700 font-bold text-xs">2</span>
                       </div>
-                      <h4 className="font-semibold text-gray-900 text-sm xs:text-base">Removals Details</h4>
+                      <h4 className="font-semibold text-gray-900 text-sm xs:text-base">Haulage Details</h4>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 xs:gap-4">
                       <div className="space-y-1.5">
@@ -769,10 +762,10 @@ const RequestQuoteSection = () => {
                           required
                           className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base appearance-none cursor-pointer"
                         >
-                          <option>Home Removals</option>
-                          <option>Office Relocation</option>
-                          <option>Packing Services</option>
-                          <option>Interstate Move</option>
+                          <option>General Haulage</option>
+                          <option>Commercial Transport</option>
+                          <option>Freight Services</option>
+                          <option>Interstate Haulage</option>
                           <option>General Enquiry</option>
                         </select>
                       </div>
@@ -783,7 +776,7 @@ const RequestQuoteSection = () => {
                           name="cargoDescription"
                           value={formData.cargoDescription}
                           onChange={handleChange}
-                          placeholder="e.g. 3-bedroom house, Office furniture"
+                          placeholder="e.g. Pallets, building materials, machinery"
                           className="w-full h-10 xs:h-11 sm:h-12 px-3 xs:px-4 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-sm sm:text-base"
                         />
                       </div>
@@ -825,7 +818,7 @@ const RequestQuoteSection = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us more about your move (number of rooms, heavy items, access requirements, preferred date, etc.)..."
+                      placeholder="Tell us more about your haulage needs (load type, weight, dimensions, access requirements, preferred date, etc.)..."
                       rows={3}
                       className="w-full px-3 xs:px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all resize-none text-sm sm:text-base"
                     />
@@ -948,8 +941,8 @@ const CareersSection = () => {
               Work at <span className="text-blue-600 block xs:inline">{company.displayName}</span>
             </h2>
             <p className="text-gray-300 mb-4 xs:mb-6 sm:mb-8 text-xs xs:text-sm sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
-              Join a growing removals team in Sydney. We're looking for dedicated professionals
-              who take pride in helping people move safely and stress-free.
+              Join a growing haulage team in NSW. We're looking for dedicated professionals
+              who take pride in delivering freight safely and on time.
             </p>
 
             <ul className="space-y-1.5 xs:space-y-2 sm:space-y-3 mb-4 xs:mb-6 sm:mb-8 inline-block text-left w-full max-w-sm mx-auto lg:mx-0">
@@ -1049,9 +1042,9 @@ const CareersSection = () => {
                     className="w-full h-9 xs:h-10 sm:h-11 md:h-12 px-2.5 xs:px-3 sm:px-4 rounded-md xs:rounded-lg bg-gray-50 border border-gray-200 text-gray-900 focus:border-blue-700 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all text-[11px] xs:text-xs sm:text-sm md:text-base"
                   >
                     <option value="">Role Interest</option>
-                    <option value="Removalist">Removalist / Mover</option>
+                    <option value="Removalist">Driver / Operator</option>
                     <option value="Truck Driver">Truck Driver</option>
-                    <option value="Packing Specialist">Packing Specialist</option>
+                    <option value="Packing Specialist">Logistics Coordinator</option>
                     <option value="Warehouse Operative">Warehouse Operative</option>
                     <option value="Operations Manager">Operations Manager</option>
                   </select>
@@ -1098,16 +1091,16 @@ const Footer = () => (
             <Logo size="md" />
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
-            Your trusted removalists in Sydney. Professional home and office removals across Australia.
+            Your trusted haulage partner in NSW. Professional freight and cargo transport across Australia.
           </p>
         </div>
 
         <div>
           <h4 className="font-semibold mb-4 text-white text-sm">Services</h4>
           <ul className="space-y-2.5 text-sm text-gray-400">
-            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Home Removals</button></li>
-            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Office Relocations</button></li>
-            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Packing Services</button></li>
+            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">General Haulage</button></li>
+            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Commercial Transport</button></li>
+            <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Freight Services</button></li>
             <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-400 transition-colors">Insured Transport</button></li>
           </ul>
         </div>

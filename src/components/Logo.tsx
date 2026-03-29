@@ -30,32 +30,32 @@ const Logo = ({ className = "", showText = true, size = "md" }: LogoProps) => {
         <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGradient)" />
         <rect x="5" y="5" width="54" height="54" rx="11" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
 
-        {/* House roof */}
-        <path d="M18 30 L32 18 L46 30" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        {/* House body */}
-        <rect x="22" y="30" width="20" height="14" rx="1" fill="rgba(255,255,255,0.85)" />
-        {/* House door */}
-        <rect x="29" y="35" width="6" height="9" rx="1" fill="#1e40af" />
-        {/* Moving truck */}
-        <rect x="10" y="40" width="16" height="9" rx="1.5" fill="#fbbf24" />
-        <path d="M26 43 L32 43 L34 47 L34 49 L26 49 Z" fill="#fbbf24" />
+        {/* Truck body / trailer */}
+        <rect x="8" y="24" width="30" height="18" rx="2" fill="#fbbf24" />
+        {/* Truck cab */}
+        <path d="M38 30 L48 30 L52 36 L52 42 L38 42 Z" fill="#fbbf24" />
+        {/* Cab window */}
+        <path d="M40 31 L46 31 L49 36 L40 36 Z" fill="rgba(255,255,255,0.85)" />
         {/* Truck wheels */}
-        <circle cx="15" cy="50" r="3" fill="white" />
-        <circle cx="15" cy="50" r="1.5" fill="#1e40af" />
-        <circle cx="30" cy="50" r="3" fill="white" />
-        <circle cx="30" cy="50" r="1.5" fill="#1e40af" />
-        {/* Boxes on truck */}
-        <rect x="12" y="36" width="5" height="4" rx="0.5" fill="rgba(255,255,255,0.7)" />
-        <rect x="18" y="37" width="4" height="3" rx="0.5" fill="rgba(255,255,255,0.5)" />
+        <circle cx="18" cy="44" r="4" fill="white" />
+        <circle cx="18" cy="44" r="2" fill="#1e40af" />
+        <circle cx="32" cy="44" r="4" fill="white" />
+        <circle cx="32" cy="44" r="2" fill="#1e40af" />
+        <circle cx="48" cy="44" r="4" fill="white" />
+        <circle cx="48" cy="44" r="2" fill="#1e40af" />
+        {/* Road line */}
+        <rect x="6" y="49" width="52" height="2" rx="1" fill="rgba(255,255,255,0.3)" />
+        {/* CH letters on trailer */}
+        <text x="23" y="37" textAnchor="middle" fill="#1e40af" fontSize="11" fontWeight="bold" fontFamily="sans-serif">CH</text>
       </svg>
 
       {showText && (
         <div className="flex flex-col">
           <span className={`font-display ${sizes[size].text} font-bold text-gray-900 leading-tight`}>
-            Hanley's
+            Cremona
           </span>
           <span className="text-xs font-medium text-blue-600 tracking-wider uppercase">
-            Removals
+            Haulage
           </span>
         </div>
       )}
