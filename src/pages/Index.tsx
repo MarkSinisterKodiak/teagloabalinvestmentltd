@@ -626,6 +626,22 @@ const RequestQuoteSection = () => {
           cargoDescription: "",
           message: "",
         });
+
+        // Fire AI auto-reply (non-blocking)
+        fetch("/api/review-quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            serviceType: formData.serviceType,
+            pickupLocation: formData.pickupLocation,
+            deliveryLocation: formData.deliveryLocation,
+            cargoDescription: formData.cargoDescription,
+            message: formData.message,
+          }),
+        }).catch(() => {});
       } else {
         setStatus("error");
       }
@@ -921,6 +937,19 @@ const CareersSection = () => {
       if (response.ok) {
         setStatus("success");
         setFormData({ fullName: "", email: "", phone: "", experience: "", role: "" });
+
+        // Fire AI auto-reply (non-blocking)
+        fetch("/api/review-application", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            experience: formData.experience,
+            role: formData.role,
+          }),
+        }).catch(() => {});
       } else {
         setStatus("error");
       }
